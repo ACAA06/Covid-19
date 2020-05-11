@@ -1,3 +1,4 @@
+import 'package:covid19/Worldlatest.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19/home.dart';
 import 'package:covid19/Country_Live.dart';
@@ -10,6 +11,7 @@ void main() => runApp(MaterialApp(
     '/countrylive': (context) => Countrylive(),
     '/countries': (context) => country(),
     '/loading': (context) => Loading(),
+    '/worldlatest': (context) => worldlatest(),
   },
 ));
 

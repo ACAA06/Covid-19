@@ -55,7 +55,9 @@ class _homeState extends State<home> {
           RaisedButton(
             child: Text('World stats by Date'),
             padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, '/worldlatest');
+            },
           ),
         ],
       ),

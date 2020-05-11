@@ -19,7 +19,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
-    Future.delayed(Duration(seconds: 4),(){
+    Future.delayed(Duration(seconds: 3),(){
       Navigator.pushReplacementNamed(context,data['transit'] , arguments: {'data': data['data']
       });
     });
