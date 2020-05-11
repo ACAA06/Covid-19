@@ -46,7 +46,7 @@ class _homeState extends State<home> {
             child: Text('Live status by Country'),
             padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
             onPressed: (){
-               Navigator.pushNamed(context, '/countries',arguments: {'data': data});
+               Navigator.pushNamed(context, '/loading',arguments: {'data': data, 'transit': '/countries'});
             },
           ),
           SizedBox(

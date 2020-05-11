@@ -1,39 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
+import 'package:flutter/material.dart';
+import 'dart:async';
 class Loading extends StatefulWidget {
   @override
   _LoadingState createState() => _LoadingState();
 }
 
 class _LoadingState extends State<Loading> {
-
-  void setupWorldTime() async {
-    await instance.getTime();
-    Navigator.pushReplacementNamed(context, '/home', arguments: {
-      'location': instance.location,
-      'flag': instance.flag,
-      'time': instance.time,
-      'isDaytime': instance.isDaytime
-    });
-  }
-
+  Map data={};
+  String transit;
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    setupWorldTime();
   }
 
   @override
   Widget build(BuildContext context) {
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    Future.delayed(Duration(seconds: 4),(){
+      Navigator.pushReplacementNamed(context,data['transit'] , arguments: {'data': data['data']
+      });
+    });
+
+    print(data['transit']);
     return Scaffold(
-        backgroundColor: Colors.blue[900],
+        appBar: AppBar(
+          title: Text('Covid - 19'),
+          backgroundColor: Colors.red[800],
+          centerTitle: true,
+          elevation: 0.0,
+        ),
+        backgroundColor: Colors.grey[200],
         body: Center(
-            child: SpinKitFadingCube(
-              color: Colors.white,
+            child: SpinKitRing(
+              color: Colors.red,
               size: 50.0,
             )
         )
     );
   }
+
+
+
+
 }
+
+
