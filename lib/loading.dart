@@ -24,7 +24,7 @@ class _LoadingState extends State<Loading> {
       });
     });
 
-    print(data['transit']);
+    //print(data['transit']);
     return Scaffold(
         appBar: AppBar(
           title: Text('Covid - 19'),
@@ -41,10 +41,4 @@ class _LoadingState extends State<Loading> {
         )
     );
   }
-
-
-
-
 }
-
-

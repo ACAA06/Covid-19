@@ -12,16 +12,17 @@ class _countryState extends State<country> {
   List locations;
 
   void updatedetails(index) async {
-     countrydetails instance = countrydetails(locations[index]['Slug']);
+    countrydetails instance = countrydetails(locations[index]['Slug']);
     await instance.getdetails();
     //print(instance.date);
-    Navigator.pushReplacementNamed(context,'/countrylive',arguments: {
+    Navigator.pushNamed(context,'/countrylive',arguments: {
       'date': instance.date,
       'confirmed': instance.confirmed,
       'recovered': instance.recovered,
       'active': instance.active,
       'deaths': instance.deaths,
-      'cname': locations[index]['Slug'],
+      'cname': instance.cname,
+      'resp': instance.resp,
     } );
   }
   @override
@@ -31,6 +32,7 @@ class _countryState extends State<country> {
   }
   @override
   Widget build(BuildContext context) {
+
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     locations=data['data'];
     return Scaffold(

@@ -7,6 +7,7 @@ class countrydetails{
   String cname;
   List<int> active=[];
   List<String> date=[];
+  bool resp;
   countrydetails(cname){
     this.cname=cname;
   }
@@ -19,6 +20,9 @@ class countrydetails{
       List data = jsonDecode(response.body);
       //print(data[0].runtimeType);
       //print(data.length);
+      if(data.length!=0){
+        this.resp=true;
+        this.cname=data[0]['Country'];
       for(var i=0;i<data.length;i++)
         {
           this.confirmed.add(data[i]['Confirmed']);
@@ -26,7 +30,10 @@ class countrydetails{
           this.active.add(data[i]['Active']);
           this.deaths.add(data[i]['Deaths']);
           this.date.add(data[i]['Date']);
-        }
+        }}
+      else{
+        this.resp=false;
+      }
          //print(this.date);
     }
     catch (e) {
