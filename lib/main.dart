@@ -5,6 +5,7 @@ import 'package:covid19/Country_Live.dart';
 import 'package:covid19/countries.dart';
 import 'package:covid19/loading.dart';
 import 'package:covid19/devdetails.dart';
+import 'package:covid19/graphdisp.dart';
 
 void main() => runApp(MaterialApp(
   initialRoute: '/',
@@ -15,6 +16,7 @@ void main() => runApp(MaterialApp(
     '/loading': (context) => Loading(),
     '/worldlatest': (context) => worldlatest(),
     '/developerdetails': (context) => devdetails(),
+    '/gd':(context)=>Graphdisp(),
   },
 ));
 

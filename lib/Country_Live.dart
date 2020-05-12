@@ -34,7 +34,21 @@ class _CountryliveState extends State<Countrylive> {
             title: Text(data['cname']),
             centerTitle: true,
             elevation: 0,
-          ),
+              actions: <Widget>[
+          // action button
+          IconButton(
+          icon: Icon(Icons.assessment),
+        onPressed: () {
+Navigator.pushNamed(context, '/gd',arguments: {
+  'cname': data['cname'],
+  'date': data['date'],
+  'deaths': data['deaths'],
+  'recovered': data['recovered'],
+  'confirmed': data['confirmed']
+});
+        },
+      ),
+        ]  ),
           body: ListView.builder
             (
               itemCount: date.length,

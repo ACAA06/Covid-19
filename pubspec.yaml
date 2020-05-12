@@ -23,7 +23,8 @@ dependencies:
   flutter_spinkit: ^4.1.2+1
   spinner: ^1.0.1
   intl: ^0.15.8
-  syncfusion_flutter_charts: ^17.3.26
+  charts_flutter: ^0.9.0
+  syncfusion_flutter_charts: ^18.1.48
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
