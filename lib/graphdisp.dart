@@ -52,10 +52,20 @@ import 'package:syncfusion_flutter_core/theme.dart';
      return Scaffold(
          backgroundColor: Colors.grey[200],
          appBar: AppBar(
-           title: Text(data['cname']+' last 15 days stats'),
+           title: Text(data['cname']+' last 15 days'),
            backgroundColor: Colors.red[800],
            centerTitle: true,
            elevation: 0.0,
+             actions: <Widget>[
+               // action button
+               IconButton(
+                 icon: Icon(Icons.refresh),
+                 onPressed: () {
+                   setState(() {
+                   });
+                 },
+               ),
+             ]
          ),
          body: Center(
              child: SfTheme(
@@ -68,7 +78,7 @@ import 'package:syncfusion_flutter_core/theme.dart';
      child:Container(
                margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                  child: SfCartesianChart(
-                      
+
                      legend: Legend(isVisible: true),
                      plotAreaBorderWidth: 0,
                      tooltipBehavior: TooltipBehavior(enable: true),
