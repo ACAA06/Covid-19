@@ -63,7 +63,7 @@ void connectivity()async{
       return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          title: Text('Covid - 19'),
+          title: Text('Covid-19'),
           backgroundColor: Colors.red[800],
           centerTitle: true,
           elevation: 0.0,
@@ -74,7 +74,7 @@ void connectivity()async{
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                   DrawerHeader(
-                    child: Text('Covid19',
+                    child: Text('Covid-19',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
@@ -126,6 +126,16 @@ void connectivity()async{
                 Navigator.pushNamed(context, '/worldlatest');
               },
             ),
+            SizedBox(
+              width: double.infinity,
+            ),
+            RaisedButton(
+              child: Text('India Latest'),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+              onPressed: () {
+                Navigator.pushNamed(context, '/indiastates');
+              },
+            ),
           ],
         ),
       );
@@ -134,7 +144,7 @@ void connectivity()async{
       if(connect && spin){
         return Scaffold(
             appBar: AppBar(
-              title: Text('World Latest'),
+              title: Text('Covid-19'),
               backgroundColor: Colors.red[800],
               centerTitle: true,
               elevation: 0.0,

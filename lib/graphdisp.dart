@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:charts_flutter/flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 
@@ -89,7 +88,8 @@ import 'package:syncfusion_flutter_core/theme.dart';
                            enableTooltip: true,
                      markerSettings: MarkerSettings(isVisible: true),
                            xValueMapper: (ChartData sales, _) => sales.x,
-                           yValueMapper: (ChartData sales, _) => sales.y
+                           yValueMapper: (ChartData sales, _) => sales.y,
+                         animationDuration: 2000
                        ),
                        LineSeries<ChartData, double>(
                          color: Colors.green,
@@ -98,7 +98,9 @@ import 'package:syncfusion_flutter_core/theme.dart';
                            enableTooltip: true,
                            markerSettings: MarkerSettings(isVisible: true),
                            xValueMapper: (ChartData sales, _) => sales.x,
-                           yValueMapper: (ChartData sales, _) => sales.y
+                           yValueMapper: (ChartData sales, _) => sales.y,
+                           animationDuration: 2000
+
                        ),
                        LineSeries<ChartData, double>(
                          color:Colors.red,
@@ -107,7 +109,9 @@ import 'package:syncfusion_flutter_core/theme.dart';
                            enableTooltip: true,
                            markerSettings: MarkerSettings(isVisible: true),
                            xValueMapper: (ChartData sales, _) => sales.x,
-                           yValueMapper: (ChartData sales, _) => sales.y
+                           yValueMapper: (ChartData sales, _) => sales.y,
+                           animationDuration: 2000
+
                        ),
                      ]
                  )
