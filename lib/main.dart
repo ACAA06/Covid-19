@@ -4,6 +4,8 @@ import 'package:covid19/home.dart';
 import 'package:covid19/Country_Live.dart';
 import 'package:covid19/countries.dart';
 import 'package:covid19/loading.dart';
+import 'package:covid19/devdetails.dart';
+
 void main() => runApp(MaterialApp(
   initialRoute: '/',
   routes: {
@@ -12,6 +14,7 @@ void main() => runApp(MaterialApp(
     '/countries': (context) => country(),
     '/loading': (context) => Loading(),
     '/worldlatest': (context) => worldlatest(),
+    '/developerdetails': (context) => devdetails(),
   },
 ));
 

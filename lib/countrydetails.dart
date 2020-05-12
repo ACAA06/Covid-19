@@ -5,7 +5,6 @@ class countrydetails{
   List<int> recovered=[];
   List<int> deaths=[];
   String cname;
-  List<int> active=[];
   List<String> date=[];
   bool resp;
   countrydetails(cname){
@@ -16,20 +15,20 @@ class countrydetails{
 
     try{
       //print(this.cname);
-      Response response = await get('https://api.covid19api.com/live/country/'+this.cname);
-      List data = jsonDecode(response.body);
+      Response response = await get('https://pomber.github.io/covid19/timeseries.json');
+      Map data = jsonDecode(response.body);
       //print(data[0].runtimeType);
-      //print(data.length);
-      if(data.length!=0){
+      //print(data[this.cname].length);
+      if(data[this.cname].length!=0){
         this.resp=true;
-        this.cname=data[0]['Country'];
-      for(var i=0;i<data.length;i++)
+        //this.cname=data[0]['Country'];
+        //print(data[this.cname][0]);
+      for(var i=0;i<data[this.cname].length;i++)
         {
-          this.confirmed.add(data[i]['Confirmed']);
-          this.recovered.add(data[i]['Recovered']);
-          this.active.add(data[i]['Active']);
-          this.deaths.add(data[i]['Deaths']);
-          this.date.add(data[i]['Date']);
+          this.confirmed.add(data[this.cname][i]['confirmed']);
+          this.recovered.add(data[this.cname][i]['recovered']);
+          this.deaths.add(data[this.cname][i]['deaths']);
+          this.date.add(data[this.cname][i]['date']);
         }}
       else{
         this.resp=false;

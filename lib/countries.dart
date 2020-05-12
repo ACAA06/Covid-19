@@ -9,17 +9,16 @@ class country extends StatefulWidget {
 
 class _countryState extends State<country> {
   Map data={};
-  List locations;
+  List<String> locations;
 
   void updatedetails(index) async {
-    countrydetails instance = countrydetails(locations[index]['Slug']);
+    countrydetails instance = countrydetails(locations[index]);
     await instance.getdetails();
-    //print(instance.date);
+    print(instance.date);
     Navigator.pushNamed(context,'/countrylive',arguments: {
       'date': instance.date,
       'confirmed': instance.confirmed,
       'recovered': instance.recovered,
-      'active': instance.active,
       'deaths': instance.deaths,
       'cname': instance.cname,
       'resp': instance.resp,
@@ -34,7 +33,8 @@ class _countryState extends State<country> {
   Widget build(BuildContext context) {
 
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
-    locations=data['data'];
+    //print(data['keys']);
+    locations=data['keys'];
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -53,7 +53,7 @@ class _countryState extends State<country> {
                   onTap: () {
                     updatedetails(index);
                   },
-                  title: Text(locations[index]['Slug']),
+                  title: Text(locations[index]),
 
                 ),
               ),

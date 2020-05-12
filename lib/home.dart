@@ -1,3 +1,4 @@
+import 'package:covid19/devdetails.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19/countries.dart';
@@ -9,13 +10,16 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-  List data;
+  List<String> keys=[];
+  Map data={};
   void getcountry() async {
     try{
       // make the request
-      Response response = await get('https://api.covid19api.com/countries');
+      Response response = await get('https://pomber.github.io/covid19/timeseries.json');
       data = jsonDecode(response.body);
-      print(response);
+      data.forEach((k, v) => keys.add(k));
+      print(keys);
+      //print(response);
     }
     catch (e) {
       print(e);
@@ -38,22 +42,57 @@ class _homeState extends State<home> {
         centerTitle: true,
         elevation: 0.0,
       ),
+      drawer: Drawer(
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                  child: Text('Covid19',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                      )
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                  ),
+                ),
+                ListTile(
+                  title: Text('STATS'),
+                  trailing: Icon(Icons.arrow_right),
+                  onTap: () {
+                    print('s');
+                  },
+                ),
+                ListTile(
+                  title: Text('Developer details'),
+                  trailing: Icon(Icons.person),
+                  onTap: () {
+                    print('s');
+                    Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => devdetails()),);
+                  },
+                ),
+              ]
+          )
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
         children: <Widget>[
           RaisedButton(
-            child: Text('Live status by Country'),
+            child: Text('Stats by Country'),
             padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
             onPressed: (){
-               Navigator.pushNamed(context, '/loading',arguments: {'data': data, 'transit': '/countries'});
+               Navigator.pushNamed(context, '/loading',arguments: {'data': data, 'keys': keys});
             },
           ),
           SizedBox(
             width: double.infinity,
           ),
           RaisedButton(
-            child: Text('World stats by Date'),
+            child: Text('World stats Latest'),
             padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
             onPressed: (){
               Navigator.pushNamed(context, '/worldlatest');

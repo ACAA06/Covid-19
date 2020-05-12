@@ -17,14 +17,13 @@ class _CountryliveState extends State<Countrylive> {
     List<int> confirmed;
     List<int> recovered;
     List<int> deaths;
-    List<int> active;
     List<String> date;
     bool resp;
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    //print(data['confirmed']);
     confirmed=data['confirmed'];
     recovered=data['recovered'];
     deaths=data['deaths'];
-    active=data['active'];
     date=data['date'];
     resp=data['resp'];
     if(resp){
@@ -49,14 +48,11 @@ class _CountryliveState extends State<Countrylive> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('On  ',
-                        style: TextStyle(
-                            color: Colors.grey[800],
-                            fontWeight: FontWeight.w800,
-                            fontStyle: FontStyle.italic,
-                            fontFamily: 'Open Sans',
-                            fontSize: 15),),
-                        Text(date[Index].substring(0,10),
+                        Icon(Icons.calendar_today,
+                      color: Colors.red,
+                      size: 24.0,
+                    ),
+                        Text( date[Index],
                           style: TextStyle(
                               color: Colors.grey[800],
                               fontWeight: FontWeight.w900,
@@ -81,28 +77,6 @@ class _CountryliveState extends State<Countrylive> {
                         Text(confirmed[Index].toString(),
                           style: TextStyle(
                               color: Colors.grey[900],
-                              fontWeight: FontWeight.w900,
-                              fontStyle: FontStyle.italic,
-                              fontFamily: 'Open Sans',
-                              fontSize: 20),)
-                      ],
-                    ),
-                    SizedBox(width: double.infinity,
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Text('Active   ',
-                          style: TextStyle(
-                              color: Colors.grey[800],
-                              fontWeight: FontWeight.w700,
-                              fontStyle: FontStyle.italic,
-                              fontFamily: 'Open Sans',
-                              fontSize: 20),),
-                        Text(active[Index].toString(),
-                          style: TextStyle(
-                              color: Colors.deepPurple[600],
                               fontWeight: FontWeight.w900,
                               fontStyle: FontStyle.italic,
                               fontFamily: 'Open Sans',

@@ -64,6 +64,17 @@ print(e);
           title: Text('World Latest'),
           centerTitle: true,
           elevation: 0,
+            actions: <Widget>[
+              // action button
+              IconButton(
+                icon: Icon(Icons.refresh),
+                onPressed: () {
+                  setState(() { spin=true;
+                  worldlat();
+                  });
+                },
+              ),
+            ]
         ),
           body: ListView.builder
             (
@@ -93,13 +104,10 @@ print(e);
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('On ',
-                            style: TextStyle(
-                                color: Colors.grey[800],
-                                fontWeight: FontWeight.w700,
-                                fontStyle: FontStyle.italic,
-                                fontFamily: 'Open Sans',
-                                fontSize: 20),),
+                          Icon(Icons.calendar_today,
+                          color: Colors.red,
+                          size: 24.0,
+                        ),
                           Text(data[keys[Index]][data[keys[Index]].length-1]['date'],
                             style: TextStyle(
                                 color: Colors.deepPurple[600],
