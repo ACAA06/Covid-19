@@ -29,6 +29,12 @@ class _worldlatestState extends State<worldlatest> {
 print(e);
   }
 }
+  void radialstat(index) {
+    Navigator.pushNamed(context, '/radial',
+        arguments: {'data': data[keys[index]],'cname': keys[index]});
+
+  }
+
 
   @override
   void initState() {
@@ -83,7 +89,7 @@ print(e);
                 return Card(
                   elevation: 5,
                   margin: EdgeInsets.fromLTRB(10, 15, 10, 5),
-                  child: Column(
+                  child:Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Row(
@@ -185,6 +191,16 @@ print(e);
                                 fontFamily: 'Open Sans',
                                 fontSize: 20),)
                         ],
+                      ),
+                      SizedBox(width: double.infinity,
+                      height:10),
+                      IconButton(
+                        icon: Icon(Icons.assessment),
+                        color: Colors.amber,
+                        onPressed: () {
+                          radialstat(Index);
+                        },
+                        iconSize: 40,
                       ),
                       SizedBox(width: double.infinity,
                         height: 30,

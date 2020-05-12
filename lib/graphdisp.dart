@@ -17,7 +17,7 @@ import 'package:syncfusion_flutter_core/theme.dart';
      final List<ChartData> confirmedData = [];
      final List<ChartData> deathData = [];
      final List<ChartData> recoveredData = [];
-     double j =0;
+     double j=0;
      print(data['deaths']);
      print(data['date'][0].runtimeType);
        for(var i=data['date'].length - 16;i<data['date'].length;i++)
@@ -76,7 +76,6 @@ import 'package:syncfusion_flutter_core/theme.dart';
      )
      ),
      child:Container(
-               margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                  child: SfCartesianChart(
 
                      legend: Legend(isVisible: true),
