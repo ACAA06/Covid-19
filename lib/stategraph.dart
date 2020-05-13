@@ -34,7 +34,7 @@ sname=data['sname'];
             style: TextStyle(
               fontSize: 20
             ),),
-            backgroundColor: Colors.red[800],
+            backgroundColor: Color(0xffff6101),
             centerTitle: true,
             elevation: 0.0,
             actions: <Widget>[

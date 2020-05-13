@@ -22,6 +22,7 @@ class _homeState extends State<home> {
       // make the request
       Response response = await get('https://pomber.github.io/covid19/timeseries.json');
       data = jsonDecode(response.body);
+      keys=[];
       data.forEach((k, v) => keys.add(k));
       print(keys);
       setState(() {
@@ -42,6 +43,7 @@ void connectivity()async{
     {
       setState(() {
         connect=true;
+        getcountry();
       });
     }
   else{setState(() {
@@ -54,7 +56,6 @@ void connectivity()async{
   void initState() {
     super.initState();
   connectivity();
-    getcountry();
   }
   @override
   Widget build(BuildContext context) {
@@ -64,45 +65,9 @@ void connectivity()async{
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
           title: Text('Covid-19'),
-          backgroundColor: Colors.red[800],
+          backgroundColor: Color(0xffff6101),
           centerTitle: true,
           elevation: 0.0,
-        ),
-        drawer: Drawer(
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-                padding: EdgeInsets.zero,
-                children: <Widget>[
-                  DrawerHeader(
-                    child: Text('Covid-19',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                        )
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('STATS'),
-                    trailing: Icon(Icons.arrow_right),
-                    onTap: () {
-                      print('s');
-                    },
-                  ),
-                  ListTile(
-                    title: Text('Developer details'),
-                    trailing: Icon(Icons.person),
-                    onTap: () {
-                      print('s');
-                      Navigator.pop(context);
-                      Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => devdetails()),);
-                    },
-                  ),
-                ]
-            )
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -145,51 +110,14 @@ void connectivity()async{
         return Scaffold(
             appBar: AppBar(
               title: Text('Covid-19'),
-              backgroundColor: Colors.red[800],
+              backgroundColor: Color(0xffff6101),
               centerTitle: true,
               elevation: 0.0,
             ),
-            drawer: Drawer(
-                child: ListView(
-                  // Important: Remove any padding from the ListView.
-                    padding: EdgeInsets.zero,
-                    children: <Widget>[
-                      DrawerHeader(
-                        child: Text('Covid19',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                            )
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                        ),
-                      ),
-                      ListTile(
-                        title: Text('STATS'),
-                        trailing: Icon(Icons.arrow_right),
-                        onTap: () {
-                          print('s');
-                        },
-                      ),
-                      ListTile(
-                        title: Text('Developer details'),
-                        trailing: Icon(Icons.person),
-                        onTap: () {
-                          print('s');
-                          Navigator.pop(context);
-                          Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => devdetails()),);
-                        },
-                      ),
-                    ]
-                )
-            ),
-
             backgroundColor: Colors.grey[200],
             body: Center(
                 child: SpinKitRing(
-                  color: Colors.red,
+                  color: Color(0xffff6101),
                   size: 50.0,
                 )
             )
@@ -199,47 +127,11 @@ void connectivity()async{
       return Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
-          title: Text('Covid - 19'),
-    backgroundColor: Colors.red[800],
+          title: Text('Covid-19'),
+    backgroundColor: Color(0xffff6101),
     centerTitle: true,
     elevation: 0.0,
     ),
-        drawer: Drawer(
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-                padding: EdgeInsets.zero,
-                children: <Widget>[
-                  DrawerHeader(
-                    child: Text('Covid19',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                        )
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('STATS'),
-                    trailing: Icon(Icons.arrow_right),
-                    onTap: () {
-                      print('s');
-                    },
-                  ),
-                  ListTile(
-                    title: Text('Developer details'),
-                    trailing: Icon(Icons.person),
-                    onTap: () {
-                      print('s');
-                      Navigator.pop(context);
-                      Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => devdetails()),);
-                    },
-                  ),
-                ]
-            )
-        ),
         body:Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

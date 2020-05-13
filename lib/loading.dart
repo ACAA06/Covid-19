@@ -27,15 +27,15 @@ class _LoadingState extends State<Loading> {
     //print(data['transit']);
     return Scaffold(
         appBar: AppBar(
-          title: Text('Covid - 19'),
-          backgroundColor: Colors.red[800],
+          title: Text('Covid-19'),
+          backgroundColor: Color(0xffff6101),
           centerTitle: true,
           elevation: 0.0,
         ),
         backgroundColor: Colors.grey[200],
         body: Center(
             child: SpinKitRing(
-              color: Colors.red,
+              color: Color(0xffff6101),
               size: 50.0,
             )
         )

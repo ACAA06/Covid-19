@@ -8,7 +8,7 @@ class devdetails extends StatelessWidget {
       appBar: AppBar(
         title: Text('Developer'),
         centerTitle: true,
-        backgroundColor: Colors.red[800],
+        backgroundColor: Color(0xffff6101),
         elevation: 0.0,
       ),
       body: Padding(

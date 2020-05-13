@@ -52,7 +52,7 @@ import 'package:syncfusion_flutter_core/theme.dart';
          backgroundColor: Colors.grey[200],
          appBar: AppBar(
            title: Text(data['cname']+' last 15 days'),
-           backgroundColor: Colors.red[800],
+           backgroundColor: Color(0xffff6101),
            centerTitle: true,
            elevation: 0.0,
              actions: <Widget>[

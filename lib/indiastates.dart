@@ -23,6 +23,7 @@ void statelist()async{
 try {
   Response response = await get('https://api.rootnet.in/covid19-in/stats/latest');
    data = jsonDecode(response.body);
+   states=[];
    for(var i =0;i<data['data']['regional'].length;i++)
      {
        states.add(data['data']['regional'][i]['loc']);
@@ -56,7 +57,7 @@ statelist();
       return Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
-            backgroundColor: Colors.red[800],
+            backgroundColor: Color(0xffff6101),
             title: Text('Covid-19'),
             centerTitle: true,
             elevation: 0,
@@ -76,7 +77,7 @@ statelist();
           ),
           body: Center(
               child: SpinKitRing(
-                color: Colors.red,
+                color: Color(0xffff6101),
                 size: 50.0,
               )
           ));
@@ -86,7 +87,7 @@ statelist();
         return Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
-            backgroundColor: Colors.red[800],
+            backgroundColor: Color(0xffff6101),
             title: Text('Choose a State'),
             centerTitle: true,
             elevation: 0,
@@ -120,7 +121,7 @@ statelist();
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             title: Text('Covid - 19'),
-            backgroundColor: Colors.red[800],
+            backgroundColor: Color(0xffff6101),
             centerTitle: true,
             elevation: 0.0,
               actions: <Widget>[

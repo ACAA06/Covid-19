@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class Countrylive extends StatefulWidget {
   @override
   _CountryliveState createState() => _CountryliveState();
@@ -30,14 +32,14 @@ class _CountryliveState extends State<Countrylive> {
       return Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
-            backgroundColor: Colors.red[800],
+            backgroundColor: Color(0xffff6101),
             title: Text(data['cname']),
             centerTitle: true,
             elevation: 0,
               actions: <Widget>[
           // action button
           IconButton(
-          icon: Icon(Icons.assessment),
+          icon: Icon(FontAwesomeIcons.chartLine),
         onPressed: () {
 Navigator.pushNamed(context, '/gd',arguments: {
   'cname': data['cname'],
@@ -155,7 +157,7 @@ Navigator.pushNamed(context, '/gd',arguments: {
       return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          backgroundColor: Colors.red[800],
+          backgroundColor: Color(0xffff6101),
           title: Text(data['cname']),
           centerTitle: true,
           elevation: 0,

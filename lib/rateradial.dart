@@ -50,7 +50,7 @@ country=data['data'];
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
           title: Text(data['cname']+' in last 10 days'),
-          backgroundColor: Colors.red[800],
+          backgroundColor: Color(0xffff6101),
           centerTitle: true,
           elevation: 0.0,
           actions: <Widget>[
