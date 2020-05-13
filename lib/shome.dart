@@ -8,23 +8,9 @@ import 'package:http/http.dart';
 import 'package:covid19/home.dart';
 import 'package:time_formatter/time_formatter.dart';
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:connectivity/connectivity.dart';
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Color(0xffff6101),
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
 
 class MyHomePage extends StatefulWidget {
 
@@ -112,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(title, style: TextStyle(
                       fontSize: 20.0,
+                      fontFamily: 'Patua' ,
                       color: Colors.blueAccent,
                     ),),
                   ),
@@ -158,6 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.all(1.0),
                     child: Text(title, style: TextStyle(
                       fontSize: 30.0,
+                      fontFamily: 'Patua' ,
                       color: Colors.blueAccent,
                     ),),
                   ),
@@ -214,6 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Important: Remove any padding from the ListView.
                   padding: EdgeInsets.zero,
                   children: <Widget>[
+
                     DrawerHeader(
                       child: Text('Covid-19',
                           style: TextStyle(
@@ -222,8 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xffff6101),
-                      ),
+                        color: Color(0xffff6101))
                     ),
                     ListTile(
                       title: Text('STATS'),
@@ -286,7 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
               staggeredTiles: [
                 StaggeredTile.extent(4, 250.0),
-                StaggeredTile.extent(2, 250.0),
+                StaggeredTile.extent(2, 200.0),
                 StaggeredTile.extent(2, 120.0),
                 StaggeredTile.extent(2, 120.0),
                 StaggeredTile.extent(4, 200.0),
