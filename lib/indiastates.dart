@@ -58,7 +58,7 @@ statelist();
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             backgroundColor: Color(0xffff6101),
-            title: Text('Covid-19'),
+            title: Text('Choose a State'),
             centerTitle: true,
             elevation: 0,
               actions: <Widget>[

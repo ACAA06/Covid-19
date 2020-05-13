@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-  import 'dart:convert';
 import 'package:covid19/countrydetails.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:http/http.dart';
 class country extends StatefulWidget {
   @override
   _countryState createState() => _countryState();
@@ -45,7 +43,7 @@ class _countryState extends State<country> {
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
           backgroundColor: Color(0xffff6101),
-          title: Text('Covid-19'),
+          title: Text('Choose a Location'),
     centerTitle: true,
     elevation: 0,
     ),

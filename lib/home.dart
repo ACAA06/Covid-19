@@ -1,7 +1,5 @@
-import 'package:covid19/devdetails.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:covid19/countries.dart';
 import 'dart:convert';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -146,6 +144,7 @@ void connectivity()async{
                     padding: EdgeInsets.all(1.0),
                     child: Text(title, style: TextStyle(
                       fontSize: 30.0,
+                      fontFamily: 'Patua' ,
                       color: Colors.blueAccent,
                     ),),
                   ),

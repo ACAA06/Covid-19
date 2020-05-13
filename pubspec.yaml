@@ -30,6 +30,9 @@ dependencies:
   flutter_staggered_grid_view: "^0.3.0"
   flutter_circular_chart: ^0.1.0
   font_awesome_flutter: ^8.2.0
+  flutter_vector_icons: ^0.2.1
+  url_launcher: ^5.4.2
+  clipboard_manager: ^0.0.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -55,6 +58,7 @@ flutter:
   assets:
     - static/clem.jpg
     - static/virus.jpg
+    - static/cover.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -71,6 +75,19 @@ flutter:
     - family: Patua
       fonts:
         - asset: fonts/PatuaOne-Regular.ttf
+    - family: Spectral
+      fonts:
+        - asset: fonts/Spectral-Regular.ttf
+          weight: 400
+        - asset: fonts/Spectral-Medium.ttf
+          weight: 500
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Light.ttf
+          weight: 200
+        - asset: fonts/Roboto-Bold.ttf
+          weight: 700
+
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

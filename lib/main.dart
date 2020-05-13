@@ -15,6 +15,7 @@ import 'package:covid19/shome.dart';
 void main() {
   SyncfusionLicense.registerLicense("NT8mJyc2IWhia31ifWN9Z2toYmF8YGJ8ampqanNiYmlmamlmanMDHmgwPzY+Nj0nOTw2amoTND4yOj99MDw+");
   return runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
   initialRoute: '/',
   routes: {
     '/': (context) => MyHomePage(),

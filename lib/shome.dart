@@ -2,8 +2,6 @@ import 'package:covid19/devdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:flutter_circular_chart/flutter_circular_chart.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart';
 import 'package:covid19/home.dart';
 import 'package:time_formatter/time_formatter.dart';
@@ -26,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool spin = true;
   String formatted;
   bool dataavail = false,
-      connect = false;
+      connect = true;
 
   void globallist() async {
     try {
@@ -180,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     if (connect) {
-      if (dataavail && !spin) {
+      if (dataavail && !spin ) {
         return Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -224,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                     ),
                     ListTile(
-                      title: Text('Developer details'),
+                      title: Text('About'),
                       trailing: Icon(Icons.person),
                       onTap: () {
                         //print('s');
@@ -284,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> {
         );
       }
       else {
-        if (!dataavail && !spin) {
+        if (!dataavail && !spin ) {
           return Scaffold(
             backgroundColor: Colors.grey[200],
             appBar: AppBar(
@@ -330,7 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                       ),
                       ListTile(
-                        title: Text('Developer details'),
+                        title: Text('About'),
                         trailing: Icon(Icons.person),
                         enabled: connect,
                         onTap: () {
@@ -406,7 +404,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                         ),
                         ListTile(
-                          title: Text('Developer details'),
+                          title: Text('About'),
                           trailing: Icon(Icons.person),
                           onTap: () {
                             Navigator.pop(context);
@@ -476,7 +474,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   ListTile(
-                    title: Text('Developer details'),
+                    title: Text('About'),
                     trailing: Icon(Icons.person),
                     onTap: () {
                       Navigator.pop(context);
