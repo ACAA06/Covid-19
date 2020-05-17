@@ -25,7 +25,7 @@ class _homeState extends State<home> {
       data = jsonDecode(response.body);
       keys=[];
       data.forEach((k, v) => keys.add(k));
-      print(keys);
+      //print(keys);
       setState(() {
         spin=false;
       });
@@ -76,7 +76,10 @@ void connectivity()async{
                     padding: EdgeInsets.all(8.0),
                     child: RaisedButton(
 
-                      child: Text(text),
+                      child: Text(text,style: TextStyle(
+                          color: Colors.grey[800],
+                          fontWeight: FontWeight.w900,
+                          fontSize: 15),),
                       onPressed: () {
                         Navigator.pushNamed(context, route);
                       },
@@ -109,10 +112,13 @@ void connectivity()async{
                 padding: EdgeInsets.all(8.0),
                 child: RaisedButton(
 
-                  child: Text(text),
+                  child: Text(text,style: TextStyle(
+                      color: Colors.grey[800],
+                      fontWeight: FontWeight.w900,
+                      fontSize: 15),),
                   onPressed: () {
                     Navigator.pushNamed(context, route,
-                        arguments: {'data': data, 'keys': keys});
+                        arguments: {'data': data, 'keys': keys,'route':'/countries'});
                   },
                 ),
               ),
@@ -168,12 +174,15 @@ void connectivity()async{
   }
   @override
   Widget build(BuildContext context) {
-    print(connect);
+    //print(connect);
     if (connect && !spin) {
       return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          title: Text('Covid-19'),
+          title: Text('C-19 Stats',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
           backgroundColor: Color(0xffff6101),
           centerTitle: true,
           elevation: 0.0,
@@ -216,7 +225,10 @@ void connectivity()async{
       if(connect && spin){
         return Scaffold(
             appBar: AppBar(
-              title: Text('Covid-19'),
+              title: Text('C-19 Stats',style: TextStyle(
+                fontFamily: 'Patua',
+                fontSize: 20,
+              ),),
               backgroundColor: Color(0xffff6101),
               centerTitle: true,
               elevation: 0.0,
@@ -234,7 +246,10 @@ void connectivity()async{
       return Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
-          title: Text('Covid-19'),
+          title: Text('C-19 Stats',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
     backgroundColor: Color(0xffff6101),
     centerTitle: true,
     elevation: 0.0,

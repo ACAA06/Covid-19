@@ -13,10 +13,8 @@ class UserProfilePage extends StatelessWidget {
   final String _fullName = "Clement Adriean A A";
   final String _status = "Software Developer";
   final String _bio =
-      "\"Hi, I am a Mobile App developer and a Data Science enthusiast. If you wants to contact me to build your product leave a message.\"";
-  final String _followers = "173";
-  final String _posts = "24";
-  final String _scores = "450";
+      "\"Hi, I am a Software developer and a Data Science enthusiast. If you want to contact me to build your product leave a message.\"";
+
 
   Widget _buildCoverImage(Size screenSize) {
     return Container(
@@ -229,7 +227,10 @@ class UserProfilePage extends StatelessWidget {
         appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color(0xffff6101),
-    title: Text('Covid-19'),),
+    title: Text('About',style: TextStyle(
+      fontFamily: 'Patua',
+      fontSize: 20,
+    ),),),
       body: Stack(
         children: <Widget>[
           _buildCoverImage(screenSize),

@@ -14,14 +14,14 @@ class _StategraphState extends State<Stategraph> {
   Widget build(BuildContext context) {
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
 sname=data['sname'];
-    int confirmedCasesIndian,discharged,deaths,confirmedCasesForeign,totalConfirmed;
+    int discharged,deaths,totalConfirmed;
     totalConfirmed=data['data']['totalConfirmed'];
-    confirmedCasesIndian=data['data']['confirmedCasesIndian'];
+    //confirmedCasesIndian=data['data']['confirmedCasesIndian'];
     discharged=data['data']['discharged'];
     deaths=data['data']['deaths'];
-    confirmedCasesForeign=data['data']['confirmedCasesForeign'];
-    print(data['data']);
-    print(confirmedCasesForeign);
+    //confirmedCasesForeign=data['data']['confirmedCasesForeign'];
+   // print(data['data']);
+    //print(confirmedCasesForeign);
     @override
     final List<StateData> chartData = [
     StateData('totalConfirmed', totalConfirmed,Colors.teal),
@@ -31,9 +31,10 @@ sname=data['sname'];
     return Scaffold(
         appBar: AppBar(
             title: Text(sname,
-            style: TextStyle(
-              fontSize: 20
-            ),),
+              style: TextStyle(
+                fontFamily: 'Patua',
+                fontSize: 20,
+              ),),
             backgroundColor: Color(0xffff6101),
             centerTitle: true,
             elevation: 0.0,

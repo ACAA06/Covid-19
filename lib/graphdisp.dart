@@ -17,11 +17,11 @@ import 'package:syncfusion_flutter_core/theme.dart';
      final List<ChartData> deathData = [];
      final List<ChartData> recoveredData = [];
      double j=0;
-     print(data['deaths']);
-     print(data['date'][0].runtimeType);
-       for(var i=data['date'].length - 16;i<data['date'].length;i++)
+     //print(data['deaths']);
+     //print(data['date'][0].runtimeType);
+       for(var i=data['date'].length - 16;i<data['date'].length-1;i++)
        {
-         confirmedData.add(ChartData(j,data['confirmed'][i]));
+         confirmedData.add(ChartData(j,data['confirmed'][i+1]-data['confirmed'][i]));
          j++;
          if(j==15)
            {
@@ -29,9 +29,9 @@ import 'package:syncfusion_flutter_core/theme.dart';
            }
        }
       j =0;
-     for(var i=data['date'].length - 16;i<data['date'].length;i++)
+     for(var i=data['date'].length - 16;i<data['date'].length-1;i++)
      {
-       deathData.add(ChartData(j,data['deaths'][i]));
+       deathData.add(ChartData(j,data['deaths'][i+1]-data['deaths'][i]));
        j++;
        if(j==15)
        {
@@ -39,9 +39,9 @@ import 'package:syncfusion_flutter_core/theme.dart';
        }
      }
      j =0;
-     for(var i=data['date'].length - 16;i<data['date'].length;i++)
+     for(var i=data['date'].length - 16;i<data['date'].length-1;i++)
      {
-       recoveredData.add(ChartData(j,data['recovered'][i]));
+       recoveredData.add(ChartData(j,data['recovered'][i+1]-data['recovered'][i]));
        j++;
        if(j==15)
        {
@@ -51,7 +51,10 @@ import 'package:syncfusion_flutter_core/theme.dart';
      return Scaffold(
          backgroundColor: Colors.grey[200],
          appBar: AppBar(
-           title: Text(data['cname']+' last 15 days'),
+           title: Text(data['cname']+' last 15 days',style: TextStyle(
+             fontFamily: 'Patua',
+             fontSize: 20,
+           ),),
            backgroundColor: Color(0xffff6101),
            centerTitle: true,
            elevation: 0.0,

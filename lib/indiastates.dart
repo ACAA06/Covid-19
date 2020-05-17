@@ -24,7 +24,7 @@ try {
   Response response = await get('https://api.rootnet.in/covid19-in/stats/latest');
    data = jsonDecode(response.body);
    states=[];
-   for(var i =0;i<data['data']['regional'].length;i++)
+   for(var i =0;i<data['data']['regional'].length-1;i++)
      {
        states.add(data['data']['regional'][i]['loc']);
      }
@@ -58,7 +58,10 @@ statelist();
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             backgroundColor: Color(0xffff6101),
-            title: Text('Choose a State'),
+            title: Text('Choose a State',style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,
+            ),),
             centerTitle: true,
             elevation: 0,
               actions: <Widget>[
@@ -88,7 +91,10 @@ statelist();
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             backgroundColor: Color(0xffff6101),
-            title: Text('Choose a State'),
+            title: Text('Choose a State',style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,
+            ),),
             centerTitle: true,
             elevation: 0,
           ),
@@ -107,7 +113,12 @@ statelist();
                           statelist();
                         });
                       },
-                      title: Text(states[index]),
+                      title: Text(states[index],style: TextStyle(
+                          color: Colors.grey[800],
+                          fontWeight: FontWeight.w900,
+                          fontStyle: FontStyle.italic,
+                          fontFamily: 'Open Sans',
+                          fontSize: 20),),
 
                     ),
                   ),
@@ -120,7 +131,10 @@ statelist();
         return Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
-            title: Text('Covid - 19'),
+            title: Text('Covid - 19',style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,
+            ),),
             backgroundColor: Color(0xffff6101),
             centerTitle: true,
             elevation: 0.0,

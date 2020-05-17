@@ -38,9 +38,24 @@ country=data['data'];
     rp=((recovered[0]-recovered[1])/recovered[1])*100;
     cp=((confirmed[0]-confirmed[1])/confirmed[1])*100;
 
-    print(cp);
-    print(rp);
-    print(dp);
+    //print(cp);
+    //print(rp);
+    //print(dp);
+    if(dp==1/0)
+      {
+        //print(dp);
+        dp=0/0;
+      }
+    if(rp==1/0)
+    {
+      //print(dp);
+      rp=0/0;
+    }
+    if(cp==1/0)
+    {
+      //print(cp);
+      cp=0/0;
+    }
     chartData.add(ChartData('Death rate',dp,Colors.red));
     chartData.add(ChartData('Recovery rate',rp,Colors.green));
     chartData.add(ChartData('Increase in cases %',cp,Colors.amberAccent));
@@ -49,7 +64,10 @@ country=data['data'];
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
-          title: Text(data['cname']+' in last 10 days'),
+          title: Text(data['cname']+' in last 10 days',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
           backgroundColor: Color(0xffff6101),
           centerTitle: true,
           elevation: 0.0,

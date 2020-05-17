@@ -9,6 +9,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class MyHomePage extends StatefulWidget {
 
@@ -31,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
       Response response = await get('https://corona.lmao.ninja/v2/all');
       data = jsonDecode(response.body);
       formatted = formatTime(data['updated']);
-      print(formatted);
-      print(data);
+     // print(formatted);
+      //print(data);
       if (data != null) {
         setState(() {
           dataavail = true;
@@ -53,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void connectivity() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
-    print(connectivityResult == ConnectivityResult.mobile ||
-        connectivityResult == ConnectivityResult.wifi);
+    //print(connectivityResult == ConnectivityResult.mobile ||
+        //connectivityResult == ConnectivityResult.wifi);
     if (connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi) {
       setState(() {
@@ -183,7 +185,10 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: AppBar(
             centerTitle: true,
             backgroundColor: Color(0xffff6101),
-            title: Text('Covid-19'),
+            title: Text('C-19 Stats',style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,
+            ),),
             actions: <Widget>[
               IconButton(icon: Icon(
                   Icons.refresh), onPressed: () {
@@ -202,9 +207,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
 
                     DrawerHeader(
-                      child: Text('Covid-19',
+                      child: Text('C-19 Stats',
                           style: TextStyle(
                             color: Colors.white,
+                            fontFamily: 'sans',
                             fontSize: 40,
                           )
                       ),
@@ -212,9 +218,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Color(0xffff6101))
                     ),
                     ListTile(
-                      title: Text('STATS'),
+                      title: Text('More Stats',style: TextStyle(
+                          color: Colors.grey[800],
+                          fontWeight: FontWeight.w900,
+                          fontSize: 20),),
                       enabled: connect,
-                      trailing: Icon(Icons.arrow_right),
+                      trailing: Icon(FontAwesomeIcons.chartLine),
                       onTap: () {
                         Navigator.pop(context);
                         Navigator.push(context,
@@ -222,7 +231,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                     ),
                     ListTile(
-                      title: Text('About'),
+                      title: Text('About',style: TextStyle(
+                          color: Colors.grey[800],
+                          fontWeight: FontWeight.w900,
+                          fontSize: 20),),
                       trailing: Icon(Icons.person),
                       onTap: () {
                         //print('s');
@@ -286,7 +298,9 @@ class _MyHomePageState extends State<MyHomePage> {
           return Scaffold(
             backgroundColor: Colors.grey[200],
             appBar: AppBar(
-              title: Text('Covid-19'),
+              title: Text('C-19 Stats',style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,)),
               backgroundColor: Color(0xffff6101),
               centerTitle: true,
               elevation: 0.0,
@@ -307,7 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.zero,
                     children: <Widget>[
                       DrawerHeader(
-                        child: Text('Covid19',
+                        child: Text('C-19 Stats',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 40,
@@ -318,9 +332,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       ListTile(
-                        title: Text('STATS'),
+                        title: Text('More Stats',style: TextStyle(
+                            color: Colors.grey[800],
+                            fontWeight: FontWeight.w900,
+                            fontSize: 20),),
                         enabled: connect,
-                        trailing: Icon(Icons.arrow_right),
+                        trailing: Icon(FontAwesomeIcons.chartLine),
                         onTap: () {
                           Navigator.pop(context);
                           Navigator.push(context,
@@ -328,7 +345,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                       ),
                       ListTile(
-                        title: Text('About'),
+                        title: Text('About',style: TextStyle(
+                            color: Colors.grey[800],
+                            fontWeight: FontWeight.w900,
+                            fontSize: 20),),
                         trailing: Icon(Icons.person),
                         enabled: connect,
                         onTap: () {
@@ -363,7 +383,9 @@ class _MyHomePageState extends State<MyHomePage> {
         else {
           return Scaffold(
               appBar: AppBar(
-                title: Text('Covid-19'),
+                title: Text('C-19 Stats',style: TextStyle(
+                  fontFamily: 'Patua',
+                  fontSize: 20,)),
                 backgroundColor: Color(0xffff6101),
                 centerTitle: true,
                 elevation: 0.0,
@@ -384,7 +406,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: EdgeInsets.zero,
                       children: <Widget>[
                         DrawerHeader(
-                          child: Text('Covid19',
+                          child: Text('C-19 Stats',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 40,
@@ -395,8 +417,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         ListTile(
-                          title: Text('STATS'),
-                          trailing: Icon(Icons.arrow_right),
+                          title: Text('More Stats',style: TextStyle(
+                              color: Colors.grey[800],
+                              fontWeight: FontWeight.w900,
+                              fontSize: 20),),
+                          trailing: Icon(FontAwesomeIcons.chartLine),
                           onTap: () {
                             Navigator.pop(context);
                             Navigator.push(context,
@@ -404,7 +429,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                         ),
                         ListTile(
-                          title: Text('About'),
+                          title: Text('About',style: TextStyle(
+                              color: Colors.grey[800],
+                              fontWeight: FontWeight.w900,
+                              fontSize: 20),),
                           trailing: Icon(Icons.person),
                           onTap: () {
                             Navigator.pop(context);
@@ -432,7 +460,9 @@ class _MyHomePageState extends State<MyHomePage> {
       return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          title: Text('Covid-19'),
+          title: Text('C-19 Stats',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,)),
           backgroundColor: Color(0xffff6101),
           centerTitle: true,
           elevation: 0.0,
@@ -453,7 +483,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                   DrawerHeader(
-                    child: Text('Covid19',
+                    child: Text('C-19 Stats',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
@@ -464,9 +494,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   ListTile(
-                    title: Text('STATS'),
+                    title: Text('More Stats',style: TextStyle(
+                        color: Colors.grey[800],
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),),
                     enabled: connect,
-                    trailing: Icon(Icons.arrow_right),
+                    trailing: Icon(FontAwesomeIcons.chartLine),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(context,
@@ -474,7 +507,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   ListTile(
-                    title: Text('About'),
+                    title: Text('About',style: TextStyle(
+                        color: Colors.grey[800],
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),),
                     trailing: Icon(Icons.person),
                     onTap: () {
                       Navigator.pop(context);

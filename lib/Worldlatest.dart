@@ -22,7 +22,7 @@ class _worldlatestState extends State<worldlatest> {
   Response response = await get('https://pomber.github.io/covid19/timeseries.json');
    data = jsonDecode(response.body);
   data.forEach((k, v) => keys.add(k));
-  print(data);
+ // print(data);
   setState(() {
     spin=false;
   });
@@ -34,7 +34,6 @@ print(e);
   void radialstat(index) {
     Navigator.pushNamed(context, '/radial',
         arguments: {'data': data[keys[index]],'cname': keys[index]});
-
   }
 
 
@@ -42,7 +41,7 @@ print(e);
   void initState() {
     super.initState();
     worldlat();
-    print('yes');
+   // print('yes');
   }
 
   @override
@@ -50,7 +49,10 @@ print(e);
     if(spin){
       return Scaffold(
           appBar: AppBar(
-            title: Text('World Latest'),
+            title: Text('World Latest',style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,
+            ),),
             backgroundColor: Color(0xffff6101),
             centerTitle: true,
             elevation: 0.0,
@@ -69,7 +71,10 @@ print(e);
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
           backgroundColor: Color(0xffff6101),
-          title: Text('World Latest'),
+          title: Text('World Latest',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
           centerTitle: true,
           elevation: 0,
             actions: <Widget>[

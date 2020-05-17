@@ -14,14 +14,15 @@ class _countryState extends State<country> {
   void updatedetails(index) async {
     countrydetails instance = countrydetails(locations[index]);
     await instance.getdetails();
-    print(instance.date);
-    Navigator.pushNamed(context,'/countrylive',arguments: {
+    //print(instance.date);
+    Navigator.pushNamed(context,'/loading',arguments: {
       'date': instance.date,
       'confirmed': instance.confirmed,
       'recovered': instance.recovered,
       'deaths': instance.deaths,
       'cname': instance.cname,
       'resp': instance.resp,
+      'route': '/countrylive',
     } );
     spin=false;
   }
@@ -43,7 +44,10 @@ class _countryState extends State<country> {
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
           backgroundColor: Color(0xffff6101),
-          title: Text('Choose a Location'),
+          title: Text('Choose a Location',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
     centerTitle: true,
     elevation: 0,
     ),
@@ -59,7 +63,10 @@ class _countryState extends State<country> {
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
           backgroundColor: Color(0xffff6101),
-          title: Text('Choose a Location'),
+          title: Text('Choose a Location',style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
           centerTitle: true,
           elevation: 0,
         ),
@@ -74,11 +81,14 @@ class _countryState extends State<country> {
                     onTap: () {
                       setState(() {
                         updatedetails(index);
-                        spin=true;
+
                       });
 
                     },
-                    title: Text(locations[index]),
+                    title: Text(locations[index],style: TextStyle(
+                        color: Colors.grey[800],
+                        fontWeight: FontWeight.w800,
+                        fontSize: 20),),
 
                   ),
                 ),

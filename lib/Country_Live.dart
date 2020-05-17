@@ -33,7 +33,10 @@ class _CountryliveState extends State<Countrylive> {
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             backgroundColor: Color(0xffff6101),
-            title: Text(data['cname']),
+            title: Text(data['cname'],style: TextStyle(
+              fontFamily: 'Patua',
+              fontSize: 20,
+            ),),
             centerTitle: true,
             elevation: 0,
               actions: <Widget>[
@@ -158,12 +161,21 @@ Navigator.pushNamed(context, '/gd',arguments: {
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
           backgroundColor: Color(0xffff6101),
-          title: Text(data['cname']),
+          title: Text(data['cname'],style: TextStyle(
+            fontFamily: 'Patua',
+            fontSize: 20,
+          ),),
           centerTitle: true,
           elevation: 0,
         ),
         body: Center(
-          child: Text('No data Available!!!'),
+          child: Text('No data Available!!!',
+            style: TextStyle(
+                color: Colors.grey[800],
+                fontWeight: FontWeight.w900,
+                fontStyle: FontStyle.italic,
+                fontFamily: 'Open Sans',
+                fontSize: 25),),
         ),
       );
     }
