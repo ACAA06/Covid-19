@@ -13,7 +13,7 @@ import 'package:covid19/stategraph.dart';
 import 'package:covid19/shome.dart';
 
 void main() {
-  SyncfusionLicense.registerLicense("NT8mJyc2IWhia31ifWN9Z2toYmF8YGJ8ampqanNiYmlmamlmanMDHmgwPzY+Nj0nOTw2amoTND4yOj99MDw+");
+  SyncfusionLicense.registerLicense("***");
   return runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
   initialRoute: '/',
