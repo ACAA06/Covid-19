@@ -1,16 +1,12 @@
-# covid19
+# C-19 Stats
 
-A new Flutter application.
+A Flutter Application to Keep track of Covid-19 across the Globe.
 
-## Getting Started
+## About
+The C-19 Stats app delivers live updates on the Covid-19 pandemic from across the Globe. It also visualizes the data into Graphs like Line, Radial and Bar Graphs. You can check the growth of the pandemic in a country, the increase in rate of cases, death rate and recovery rate of the country in the last 10 days.
+It also contains a report of all the states in India with appropriate visualizations.
 
-This project is a starting point for a Flutter application.
+#API used in this app are sourced from The Ministry of Health and Family Welfare.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Here is the link to the apk file :
+https://bit.ly/3e2lir4
