@@ -9,4 +9,4 @@ It also contains a report of all the states in India with appropriate visualizat
 **#API used in this app are sourced from The Ministry of Health and Family Welfare.
 
 Here is the link to the apk file :
-[GitHub] https://bit.ly/3e2lir4
+[GitHub] (https://bit.ly/3e2lir4)
